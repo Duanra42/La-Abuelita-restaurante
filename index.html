@@ -6,57 +6,76 @@
     <title>Comedor Tipico La Abuelita</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Réinitialiser marges et paddings */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%; /* Assurer que la page prend toute la hauteur de l'écran */
+            background-color: #f4f4f4; /* Couleur de fond de la page */
+        }
+
+        /* Appliquer box-sizing border-box à tous les éléments */
+        * {
+            box-sizing: border-box;
+        }
+
         /* Style de base pour le body */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+        body {
+            font-family: Arial, sans-serif;
+            width: 100%;
+            overflow-x: hidden; /* Cache toute marge horizontale non désirée */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
 
-/* Header avec les boutons de langue */
-header {
-    width: 100%;
-}
+        /* Header avec les boutons de langue */
+        header {
+            width: 100%;
+        }
 
-/* Conteneur des boutons de langue */
-.lang-buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+        /* Conteneur des boutons de langue */
+        .lang-buttons {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-/* Style des boutons de langue */
-.lang-btn {
-    background-color: #4CAF50; /* Couleur du bouton */
-    color: white;
-    padding: 10px 20px;
-    margin: 5px 0;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
+        /* Style des boutons de langue */
+        .lang-btn {
+            background-color: #FF5733; /* Orange vif */
+            color: white;
+            padding: 10px 20px;
+            margin: 5px 0;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
+        }
 
-/* Effet au survol */
-.lang-btn:hover {
-    background-color: #45a049;
-}
+        /* Effet au survol : changement de couleur + ombre */
+        .lang-btn:hover {
+            background-color: #e74c3c; /* Orange plus foncé */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre portée au survol */
+        }
 
-/* Texte pour les langues (peut-être plus grand ou en italique si tu veux) */
-.lang-btn:focus {
-    outline: none;
-}    </style>
+        /* Effet au clic : léger déplacement pour simuler un "appui" */
+        .lang-btn:active {
+            transform: scale(0.98); /* Réduit légèrement la taille pour simuler la pression */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Ombre plus nette quand le bouton est cliqué */
+        }
+
+        /* Texte pour les langues (peut-être plus grand ou en italique si tu veux) */
+        .lang-btn:focus {
+            outline: none;
+        }
+    </style>
 </head>
 <body>
    <header>
@@ -73,6 +92,6 @@ header {
             <br>
             <a href="menu_ja.html" class="lang-btn">日本</a>
         </div>
-    </header> 
+    </header>
 </body>
 </html>
