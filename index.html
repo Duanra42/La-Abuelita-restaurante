@@ -28,6 +28,14 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            flex-direction: column; /* Empêcher le contenu d'être en ligne, on veut qu'il soit vertical */
+        }
+
+        /* Style de l'image en haut */
+        .logo-img {
+            max-width: 100%; /* L'image prend 100% de la largeur de l'écran */
+            height: auto;    /* Garde les proportions de l'image */
+            margin-bottom: 30px; /* Espace entre l'image et les boutons */
         }
 
         /* Header avec les boutons de langue */
@@ -79,6 +87,9 @@
 </head>
 <body>
    <header>
+        <!-- Image centrée -->
+        <img src="projet menu/Comedor-tipico-la-abuelita.jpeg alt="Logo du restaurant" class="logo-img">
+
         <div class="lang-buttons">
             <a href="menu_es.html" class="lang-btn">Español</a>
             <br>
