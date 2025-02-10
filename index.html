@@ -29,8 +29,9 @@
             align-items: center;
             text-align: center;
             flex-direction: column; /* Empêcher le contenu d'être en ligne, on veut qu'il soit vertical */
-            padding-left: 30px; /* Padding à gauche pour grands écrans */
-            padding-right: 30px; /* Padding à droite pour grands écrans */
+            padding: 0 10px; /* Moins de padding général */
+            height: 100%; /* Prendre toute la hauteur de l'écran */
+            box-sizing: border-box;
         }
 
         /* Style de l'image en haut */
@@ -43,7 +44,10 @@
         /* Header avec les boutons de langue */
         header {
             width: 100%;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         /* Conteneur des boutons de langue */
@@ -57,6 +61,8 @@
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 100%; /* Assurer que les boutons prennent toute la largeur disponible */
+            max-width: 400px; /* Limiter la largeur à 400px pour les écrans larges */
+            margin: 0 auto; /* Centrer le conteneur */
         }
 
         /* Style des boutons de langue */
@@ -93,8 +99,7 @@
         /* Ajustements pour les petits écrans */
         @media (max-width: 768px) {
             body {
-                padding-left: 10px;   /* Moins de padding à gauche pour les écrans petits */
-                padding-right: 10px;  /* Moins de padding à droite */
+                padding: 0 10px;   /* Moins de padding à gauche et à droite pour les écrans petits */
             }
 
             /* L'image prend toute la largeur de l'écran sur mobile */
