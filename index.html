@@ -29,7 +29,7 @@
             align-items: center;
             text-align: center;
             flex-direction: column; /* Empêcher le contenu d'être en ligne, on veut qu'il soit vertical */
-            padding-left: 30px;    
+            padding-left: 30px; /* Padding à gauche pour grands écrans */
         }
 
         /* Style de l'image en haut */
@@ -85,17 +85,36 @@
             outline: none;
         }
 
-        .logo-img {
-    width: 400px;   /* Largeur de l'image en pixels */
-    height: auto;   /* Conserve les proportions de l'image */
-    margin-bottom: 0px; /* Espace entre l'image et les boutons */
-}
+        /* Ajustements pour les petits écrans */
+        @media (max-width: 768px) {
+            body {
+                padding-left: 10px;   /* Moins de padding à gauche pour les écrans petits */
+                padding-right: 10px;  /* Moins de padding à droite */
+            }
+
+            /* L'image prend toute la largeur de l'écran sur mobile */
+            .logo-img {
+                width: 100%;   /* L'image prend toute la largeur de l'écran */
+                margin-bottom: 20px; /* Réduire l'espace entre l'image et les boutons */
+            }
+
+            /* Réduction des espacements pour les petits écrans */
+            .lang-buttons {
+                padding: 10px;  /* Moins d'espace autour des boutons */
+            }
+
+            /* Boutons de langue plus petits sur mobile */
+            .lang-btn {
+                font-size: 14px;  /* Réduit la taille du texte sur mobile */
+                padding: 8px 16px;  /* Ajuste l'espace intérieur des boutons */
+            }
+        }
     </style>
 </head>
 <body>
    <header>
         <!-- Image centrée -->
-<img src="https://raw.githubusercontent.com/Duanra42/La-Abuelita-restaurante/main/Comedor-tipico-la-abuelita.jpeg" alt="Logo du restaurant" class="logo-img">
+        <img src="https://raw.githubusercontent.com/Duanra42/La-Abuelita-restaurante/main/Comedor-tipico-la-abuelita.jpeg" alt="Logo du restaurant" class="logo-img">
        
        <div class="lang-buttons">
             <a href="menu_es.html" class="lang-btn">Español</a>
