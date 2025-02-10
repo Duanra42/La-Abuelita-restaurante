@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comedor Tipico La Abuelita</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Style général de la page */
+        body {
+            background-color: #FF6F00; /* Orange foncé */
+            color: white; /* Texte en blanc */
+            font-family: Helvetica, Arial, sans-serif; /* Police Helvetica */
+            text-align: center; /* Centrer tout le texte sur la page */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Conteneur de la table */
+        table {
+            margin-left: -5%; /* Décaler la table de 10% du bord gauche */
+            width: 80%; /* Limiter la table à 80% de la largeur de l'écran */
+            border-collapse: collapse;
+            margin-bottom: 20px; /* Un peu d'espace en bas de la table */
+        }
+
+        /* Centrer les titres de colonnes et le texte dans les cellules */
+        table th, table td {
+            padding: 12px;
+            text-align: center; /* Centrer le texte des cellules */
+        }
+
+        /* Espacer un peu plus la colonne des prix à gauche */
+        table th:nth-child(2), table td:nth-child(2) {
+            padding-left: 20px;
+        }
+
+        /* Centrer les titres (h2) */
+        h2 {
+            text-align: center;
+        }
+
+        /* Ajuster l'apparence des traductions pour qu'elles apparaissent à droite des prix */
+        .platillo-ingles {
+            font-size: 14px;
+            color: #fff;
+            font-style: normal;
+            margin-left: 20px; /* Espacement entre le prix et la traduction */
+        }
+
+        /* Media Query pour les petits écrans */
+        @media (max-width: 768px) {
+            table {
+                width: 90%; /* La table prend 90% de la largeur de l'écran sur les petits écrans */
+                margin-left: 0; /* Retirer le décalage de la table */
+            }
+
+            table th, table td {
+                padding: 8px; /* Réduire le padding sur mobile */
+            }
+
+            /* Traduction plus lisible sur mobile */
+            .platillo-ingles {
+                font-size: 12px; /* Plus petit pour mobile */
+                margin-left: 10px; /* Moins d'espace entre le prix et la traduction */
+            }
+
+            /* Ajouter un défilement horizontal à la table si nécessaire */
+            .table-wrapper {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch; /* Pour une meilleure expérience sur les appareils tactiles */
+            }
+    </style>
+</head>
+<body>
+    <!-- Conteneur de la table avec défilement horizontal sur mobile -->
+    <div class="table-wrapper">
+        <table>
+            <thead>    <h2>Drinks</h2>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="platillo-row">
+                <td>Jugo de naranja 100% natural <p class="platillo-ingles">(100% Natural Orange Juice)</p></td>
+                <td>$60.00</td>
+            </tr>
+            <tr class="platillo-row">
+                <td>Jugo Combinado <p class="platillo-ingles">(Combined Juice)</p></td>
+                <td>$65.00</td>
+            </tr>
+          <tr class="platillo-row">
+                <td>Agua de Horchata <p class="platillo-ingles">(Rice, Milk and Cinnamon)</p></td>
+                <td>$50.00</td>
+            </tr>
+            <tr class="platillo-row">
+                <td>Agua de Jamaica <p class="platillo-ingles">(Hibiscus Water)</p></td>
+                <td>$45.00</td>
+            </tr>
+            <tr class="platillo-row">
+                <td>Refrescos <p class="platillo-ingles">(Sodas)</p></td>
+                <td>$45.00</td>
+            </tr>
+            <tr class="platillo-row">
+                <td>Refrescos de Lata <p class="platillo-ingles">(Canned Sodas)</p></td>
+                <td>$50.00</td>
+            </tr>
+            <tr class="platillo-row">
+                <td>Botella de Agua <p class="platillo-ingles">(Water Bottle)</p></td>
+                <td>$20.00</td>
+            </tr>
+            <tr class="platillo-row">
+                <td>Cervezas (Corona et Victoria) <p class="platillo-ingles">(Beers: Corona and Victoria)</p></td>
+                <td>$50.00</td>
+            </tr>
+            <tr class="platillo-row">
+                <td>Negra Modelo <p class="platillo-ingles">(Negra Modelo Beer)</p></td>
+                <td>$60.00</td>
+            </tr>
+            <tr class="platillo-row">
+                <td>Michelada <p class="platillo-ingles">(Michelada)</p></td>
+                <td>$70.00</td>
+            </tr>
+            <tr class="platillo-row">
+                <td>Aperitivo Oaxaqueño <p class="platillo-ingles">(Oaxacan Appetizer)</p></td>
+                <td>$80.00</td>
+            </tr>
+        </tbody>
+    </table>
