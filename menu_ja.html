@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +21,7 @@
             margin-left: -5%; /* Décaler la table de 10% du bord gauche */
             width: 80%; /* Limiter la table à 80% de la largeur de l'écran */
             border-collapse: collapse;
+            margin-bottom: 20px; /* Un peu d'espace en bas de la table */
         }
 
         /* Centrer les titres de colonnes et le texte dans les cellules */
@@ -47,13 +48,35 @@
             margin-left: 20px; /* Espacement entre le prix et la traduction */
         }
 
-        
-        
+        /* Media Query pour les petits écrans */
+        @media (max-width: 768px) {
+            table {
+                width: 90%; /* La table prend 90% de la largeur de l'écran sur les petits écrans */
+                margin-left: 0; /* Retirer le décalage de la table */
+            }
+
+            table th, table td {
+                padding: 8px; /* Réduire le padding sur mobile */
+            }
+
+            /* Traduction plus lisible sur mobile */
+            .platillo-ingles {
+                font-size: 12px; /* Plus petit pour mobile */
+                margin-left: 10px; /* Moins d'espace entre le prix et la traduction */
+            }
+
+            /* Ajouter un défilement horizontal à la table si nécessaire */
+            .table-wrapper {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch; /* Pour une meilleure expérience sur les appareils tactiles */
+            }
     </style>
 </head>
 <body>
-
-    <h2>飲み物 (Nomimono)</h2>
+    <!-- Conteneur de la table avec défilement horizontal sur mobile -->
+    <div class="table-wrapper">
+        <table>
+            <thead>    <h2>飲み物 (Nomimono)</h2>
     <table>
         <thead>
             <tr>
