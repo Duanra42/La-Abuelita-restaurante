@@ -6,3 +6,23 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
+
+
+button {
+    background-color: #ffffff;
+    color: #FF6F00;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffe0b2;
+}
+
+html {
+    scroll-behavior: smooth;
+}
