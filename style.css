@@ -8,21 +8,21 @@ body {
     padding: 0;
 
 
-button {
-    background-color: #ffffff;
-    color: #FF6F00;
-    padding: 10px 20px;
+.bouton-menu {
+    background-color: #e65100; /* Orange foncé, un peu plus sombre que #FF6F00 */
+    color: white;
+    padding: 12px 24px;
     border: none;
     border-radius: 8px;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 20px;
 }
 
-button:hover {
-    background-color: #ffe0b2;
-}
-
+.bouton-menu:hover {
+    background-color: #bf360c;
 html {
     scroll-behavior: smooth;
 }
