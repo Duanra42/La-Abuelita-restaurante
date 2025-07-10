@@ -48,7 +48,6 @@ h2 {
   background-color: #d35400;   /* orange foncé */
   color: white;                /* texte blanc */
   padding: 12px 20px;          /* espace autour du texte */
-  border-radius: 8px;          /* coins arrondis */
   display: inline-block;       /* taille ajustée au texte */
   margin-bottom: 20px;         /* espace sous le titre */
   font-weight: bold;           /* texte en gras */
