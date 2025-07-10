@@ -56,27 +56,26 @@ img {
   object-fit: cover; /* optionnel : garde un bon cadrage */
 }    
 
+
 .btn-orange {
   display: inline-block;
-  background-color: #d35400;    /* Orange foncé */
-  color: white;                 /* Texte blanc */
-  padding: 16px 32px;           /* Plus grand bouton */
-  font-size: 18px;              /* Taille de texte plus grande */
+  background-color: #d35400;       /* Orange foncé */
+  color: white;                    /* Texte blanc */
+  padding: 16px 32px;              /* Bouton bien grand */
+  font-size: 20px;                 /* Texte plus gros */
   font-weight: bold;
   border: none;
-  border-radius: 8px;
-  text-decoration: none;        /* Supprime le soulignement */
+  border-radius: 10px;             /* Coins arrondis */
+  text-decoration: none;
   text-align: center;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 12px rgba(211, 84, 0, 0.4); /* Ombre douce */
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-orange:hover {
-  background-color: #a84300;    /* Orange plus foncé au survol */
-  transform: translateY(-2px);  /* Petit effet au survol */
+  background-color: #a84300;       /* Plus foncé au survol */
+  transform: translateY(-2px);     /* Effet "soulèvement" */
 }
-
-
 
     
