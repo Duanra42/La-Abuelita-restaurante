@@ -42,3 +42,16 @@ body {
     box-shadow: 0 8px 16px rgba(168, 67, 0, 0.6);
     transform: translateY(-3px);
 }
+
+
+h2 {
+  background-color: #d35400;   /* orange foncé */
+  color: white;                /* texte blanc */
+  padding: 12px 20px;          /* espace autour du texte */
+  border-radius: 8px;          /* coins arrondis */
+  display: inline-block;       /* taille ajustée au texte */
+  margin-bottom: 20px;         /* espace sous le titre */
+  font-weight: bold;           /* texte en gras */
+  font-size: 1.8rem;           /* taille un peu plus grande */
+}
+
