@@ -57,25 +57,5 @@ img {
 }    
 
 
-.btn-orange {
-  display: inline-block;
-  background-color: #d35400;       /* Orange foncé */
-  color: white;                    /* Texte blanc */
-  padding: 16px 32px;              /* Bouton bien grand */
-  font-size: 20px;                 /* Texte plus gros */
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;             /* Coins arrondis */
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-  box-shadow: 0 5px 12px rgba(211, 84, 0, 0.4); /* Ombre douce */
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-orange:hover {
-  background-color: #a84300;       /* Plus foncé au survol */
-  transform: translateY(-2px);     /* Effet "soulèvement" */
-}
 
     
