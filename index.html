@@ -1,131 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comedor Tipico La Abuelita</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Réinitialisation des marges et paddings pour une mise en page propre */
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%; /* Assurer que la page prend toute la hauteur */
-            background-color: #f4f4f4;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comedor Típico La Abuelita</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #FFA500; /* Orange clair */
+    }
 
-        /* Appliquer box-sizing border-box à tous les éléments pour éviter les débordements */
-        * {
-            box-sizing: border-box;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        /* Style global du body */
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            height: 100vh; /* Prendre toute la hauteur de l'écran */
-            overflow: hidden; /* Masquer les débordements horizontaux */
-            background-color: #f4f4f4; 
-            padding: 0; /* Aucun padding global */
-        }
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-        /* Conteneur header */
-        header {
-            width: 100%; /* Largeur maximale du header */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+    header {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
-        /* Style de l'image */
-        .logo-img {
-            max-width: 100%; /* L'image prend 100% de la largeur de son conteneur */
-            height: auto; /* Conserver les proportions */
-            margin-bottom: 20px; /* Espacement entre l'image et les boutons */
-            max-width: 400px; /* Largeur maximale de l'image */
-        }
+    /* Nouveau style logo : plus beau */
+    .logo-img {
+      max-width: 100%;
+      height: auto;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      border: 5px solid white;
+      margin-bottom: 25px;
+      transition: transform 0.3s ease-in-out;
+    }
 
-        /* Style du conteneur des boutons de langue */
-        .lang-buttons {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 400px; /* Limiter la largeur maximale des boutons */
-            width: 100%;
-        }
+    .logo-img:hover {
+      transform: scale(1.02);
+    }
 
-        /* Style des boutons */
-        .lang-btn {
-            background-color: #FF5733; /* Orange vif */
-            color: white;
-            padding: 10px 20px;
-            margin: 5px 0;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-            width: 100%; /* Faire en sorte que les boutons prennent toute la largeur disponible */
-            max-width: 300px; /* Limiter la largeur des boutons */
-            transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s;
-        }
+    .lang-buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffffcc; /* Blanc semi-transparent */
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      max-width: 400px;
+      width: 100%;
+    }
 
-        /* Effet au survol des boutons */
-        .lang-btn:hover {
-            background-color: #e74c3c; /* Orange plus foncé */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
+    .lang-btn {
+      background-color: #cc4400; /* Orange foncé */
+      color: white;
+      padding: 12px 24px;
+      margin: 6px 0;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 300px;
+      transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s;
+    }
 
-        /* Effet lors du clic sur un bouton */
-        .lang-btn:active {
-            transform: scale(0.98);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        }
+    .lang-btn:hover {
+      background-color: #a83600; /* Plus foncé au survol */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
 
-        /* Pour les petits écrans (en dessous de 768px) */
-        @media (max-width: 768px) {
-            body {
-                padding: 0 10px; /* Réduire le padding latéral pour les petits écrans */
-            }
+    .lang-btn:active {
+      transform: scale(0.97);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
 
-            .logo-img {
-                width: 100%; /* L'image prend toute la largeur de l'écran sur mobile */
-                margin-bottom: 15px;
-            }
+    @media (max-width: 768px) {
+      body {
+        padding: 0 10px;
+      }
 
-            .lang-buttons {
-                padding: 15px; /* Réduire l'espace autour des boutons */
-            }
+      .logo-img {
+        width: 100%;
+        margin-bottom: 15px;
+      }
 
-            .lang-btn {
-                font-size: 14px; /* Réduire la taille du texte sur mobile */
-                padding: 8px 16px; /* Réduire l'espace intérieur des boutons */
-            }
-        }
-    </style>
+      .lang-buttons {
+        padding: 15px;
+      }
+
+      .lang-btn {
+        font-size: 14px;
+        padding: 10px 18px;
+      }
+    }
+  </style>
 </head>
 <body>
-   <header>
-        <!-- Logo du restaurant centré -->
-        <img src="https://raw.githubusercontent.com/Duanra42/La-Abuelita-restaurante/main/Comedor-tipico-la-abuelita.jpeg" alt="Logo du restaurant" class="logo-img">
-       
-        <!-- Boutons de langue -->
-        <div class="lang-buttons">
-            <a href="menu_es.html" class="lang-btn">Español</a>
-            <a href="menu_en.html" class="lang-btn">English</a>
-            <a href="menu_fr.html" class="lang-btn">Français</a>
-            <a href="menu_it.html" class="lang-btn">Italiano</a>
-            <a href="menu_de.html" class="lang-btn">Deutsch</a>
-            <a href="menu_ja.html" class="lang-btn">日本</a>
-            <a href="menu_ko.html" class="lang-btn">한국어</a>        
-        </div>
-    </header>
+  <header>
+    <!-- Logo du restaurant -->
+    <img src="https://raw.githubusercontent.com/Duanra42/La-Abuelita-restaurante/main/Comedor-tipico-la-abuelita.jpeg" alt="Logo du restaurant" class="logo-img">
+
+    <!-- Boutons de sélection de langue -->
+    <div class="lang-buttons">
+      <a href="menu_es.html" class="lang-btn">Español</a>
+      <a href="menu_en.html" class="lang-btn">English</a>
+      <a href="menu_fr.html" class="lang-btn">Français</a>
+      <a href="menu_it.html" class="lang-btn">Italiano</a>
+      <a href="menu_de.html" class="lang-btn">Deutsch</a>
+      <a href="menu_ja.html" class="lang-btn">日本</a>
+      <a href="menu_ko.html" class="lang-btn">한국어</a>
+    </div>
+  </header>
 </body>
 </html>
