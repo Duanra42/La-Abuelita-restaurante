@@ -37,7 +37,7 @@
 
         /* Centrer les titres (h2) */
         
- h2 {
+    h2 {
             background-color: #d35400;   /* orange foncé */
             color: white;                /* texte blanc */
             padding: 12px 20px;          /* espace autour du texte */
@@ -47,7 +47,9 @@
             font-weight: bold;           /* texte en gras */
             font-size: 1.8rem;           /* taille un peu plus grande */
             text-align: center;
-        }        /* Ajuster l'apparence des traductions pour qu'elles apparaissent à droite des prix */
+        }
+
+        /* Ajuster l'apparence des traductions pour qu'elles apparaissent à droite des prix */
         .platillo-ingles {
             font-size: 14px;
             color: #fff;
@@ -77,6 +79,48 @@
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch; /* Pour une meilleure expérience sur les appareils tactiles */
             }
+
+              .image-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .image-container img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .caption {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 8px;
+      font-style: italic;
+    }            
+
+ .btn-orange {
+      display: inline-block;
+      background-color: #d35400;
+      color: white;
+      padding: 16px 32px;
+      font-size: 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 5px 12px rgba(211, 84, 0, 0.4);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-orange:hover {
+      background-color: #a84300;
+      transform: translateY(-2px);
+    }            
+            
     </style>
 </head>
 <body>
