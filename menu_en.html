@@ -1,505 +1,635 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comedor Tipico La Abuelita</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Style général de la page */
-        body {
-            background-color: #FF6F00; /* Orange foncé */
-            color: white; /* Texte en blanc */
-            font-family: Helvetica, Arial, sans-serif; /* Police Helvetica */
-            text-align: center; /* Centrer tout le texte sur la page */
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Menu of Comedor Típico La Abuelita, traditional Oaxacan cuisine in Mercado 20 de Noviembre.">
+  <title>Menu | Comedor Típico La Abuelita</title>
 
-        /* Conteneur de la table */
-        table {
-            margin-left: -5%; /* Décaler la table de 10% du bord gauche */
-            width: 80%; /* Limiter la table à 80% de la largeur de l'écran */
-            border-collapse: collapse;
-            margin-bottom: 20px; /* Un peu d'espace en bas de la table */
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        /* Centrer les titres de colonnes et le texte dans les cellules */
-        table th, table td {
-            padding: 12px;
-            text-align: center; /* Centrer le texte des cellules */
-        }
-
-        /* Espacer un peu plus la colonne des prix à gauche */
-        table th:nth-child(2), table td:nth-child(2) {
-            padding-left: 20px;
-        }
-
-        /* Centrer les titres (h2) */
-        
-    h2 {
-            background-color: #d35400;   /* orange foncé */
-            color: white;                /* texte blanc */
-            padding: 12px 20px;          /* espace autour du texte */
-            border-radius: 8px;          /* coins arrondis */
-            display: inline-block;       /* taille ajustée au texte */
-            margin-bottom: 20px;         /* espace sous le titre */
-            font-weight: bold;           /* texte en gras */
-            font-size: 1.8rem;           /* taille un peu plus grande */
-            text-align: center;
-        }
-
-        /* Ajuster l'apparence des traductions pour qu'elles apparaissent à droite des prix */
-        .platillo-ingles {
-            font-size: 14px;
-            color: #fff;
-            font-style: normal;
-            margin-left: 20px; /* Espacement entre le prix et la traduction */
-        }
-
-        /* Media Query pour les petits écrans */
-        @media (max-width: 768px) {
-            table {
-                width: 90%; /* La table prend 90% de la largeur de l'écran sur les petits écrans */
-                margin-left: 0; /* Retirer le décalage de la table */
-            }
-
-            table th, table td {
-                padding: 8px; /* Réduire le padding sur mobile */
-            }
-
-            /* Traduction plus lisible sur mobile */
-            .platillo-ingles {
-                font-size: 12px; /* Plus petit pour mobile */
-                margin-left: 10px; /* Moins d'espace entre le prix et la traduction */
-            }
-
-            /* Ajouter un défilement horizontal à la table si nécessaire */
-            .table-wrapper {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch; /* Pour une meilleure expérience sur les appareils tactiles */
-            }
-
-           .image-container {
-  text-align: center;
-  margin: 30px 0;
-  padding: 0 20px; /* marge à gauche et à droite */
-}
-
-.image-container img {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.caption {
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: 8px;
-  font-style: italic;
-}
-
- .btn-orange {
-      display: inline-block;
-      background-color: #d35400;
-      color: white;
-      padding: 16px 32px;
-      font-size: 20px;
-      font-weight: bold;
-      border: none;
-      border-radius: 10px;
-      text-decoration: none;
-      text-align: center;
-      cursor: pointer;
-      box-shadow: 0 5px 12px rgba(211, 84, 0, 0.4);
-      transition: background-color 0.3s ease, transform 0.2s ease;
+  <style>
+    :root {
+      --cream: #ead7b8;
+      --cream-light: #f5e9d4;
+      --terracotta: #9a4b34;
+      --brown: #733522;
+      --brown-dark: #4d281c;
+      --text: #50382e;
+      --line: #ad7258;
+      --paper: rgba(255, 248, 235, 0.34);
     }
 
-    .btn-orange:hover {
-      background-color: #a84300;
-      transform: translateY(-2px);
-    }            
-            
-    </style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 50% 8%, rgba(255,255,255,0.24), transparent 34%),
+        var(--cream);
+      color: var(--text);
+      font-family: "Montserrat", Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    .oaxaca-border {
+      width: 100%;
+      height: 24px;
+      background-color: var(--brown);
+      background-image:
+        linear-gradient(45deg, transparent 34%, var(--cream) 34%, var(--cream) 45%, transparent 45%),
+        linear-gradient(-45deg, transparent 34%, var(--cream) 34%, var(--cream) 45%, transparent 45%);
+      background-size: 28px 24px;
+      border-top: 3px solid var(--terracotta);
+      border-bottom: 3px solid var(--terracotta);
+    }
+
+    .page {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 22px 18px 42px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .topbar a {
+      color: var(--brown);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .4px;
+    }
+
+    .brand {
+      text-align: center;
+      margin: 8px 0 34px;
+    }
+
+    .brand img {
+      width: min(100%, 290px);
+      height: auto;
+      display: block;
+      margin: 0 auto 16px;
+    }
+
+    .brand-line,
+    .section-line {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 330px;
+      margin: 0 auto;
+      color: var(--terracotta);
+    }
+
+    .brand-line::before,
+    .brand-line::after,
+    .section-line::before,
+    .section-line::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .brand p {
+      margin: 10px 0 0;
+      color: var(--brown);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 19px;
+      font-style: italic;
+    }
+
+    .history {
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--terracotta);
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+    }
+
+    .history h1,
+    .menu-intro h2,
+    .menu-section h2 {
+      margin: 2px 0 0;
+      color: var(--brown);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .history h1 {
+      font-size: clamp(38px, 8vw, 58px);
+      line-height: .95;
+      letter-spacing: 1px;
+    }
+
+    .history-subtitle {
+      margin: 4px 0 26px;
+      color: var(--terracotta);
+      text-align: center;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 27px;
+      font-style: italic;
+    }
+
+    .story-chapter {
+      padding: 22px 0;
+      border-top: 1px solid rgba(154,75,52,.34);
+    }
+
+    .story-chapter h3 {
+      margin: 0 0 8px;
+      color: var(--brown);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 27px;
+      line-height: 1.1;
+    }
+
+    .story-chapter p {
+      margin: 0 0 12px;
+      font-size: 15px;
+    }
+
+    .story-photo {
+      margin: 16px 0 6px;
+    }
+
+    .story-photo img {
+      display: block;
+      width: 100%;
+      max-height: 430px;
+      object-fit: cover;
+      border: 1px solid rgba(115,53,34,.3);
+      box-shadow: 0 7px 18px rgba(77,40,28,.13);
+    }
+
+    .story-photo figcaption {
+      margin-top: 7px;
+      color: var(--brown);
+      text-align: center;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .story-closing {
+      margin: 28px 0 0;
+      padding: 24px 18px;
+      background: var(--paper);
+      border: 1px solid rgba(154,75,52,.38);
+      text-align: center;
+    }
+
+    .story-closing strong {
+      display: block;
+      color: var(--brown);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 27px;
+    }
+
+    .story-closing p {
+      margin: 8px auto 0;
+      max-width: 560px;
+      font-size: 14px;
+    }
+
+    .menu-button {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 13px 22px;
+      background: var(--brown);
+      color: #fff8eb;
+      border: 1px solid var(--brown-dark);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .menu-intro {
+      scroll-margin-top: 20px;
+      text-align: center;
+      margin: 8px 0 28px;
+    }
+
+    .menu-intro h2 {
+      font-size: 44px;
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+
+    .menu-intro p {
+      margin: 5px 0 0;
+      color: var(--terracotta);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 21px;
+      font-style: italic;
+    }
+
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px;
+      margin: 22px auto 36px;
+      max-width: 760px;
+    }
+
+    .quick-nav a {
+      padding: 8px 11px;
+      color: var(--brown);
+      border: 1px solid rgba(115,53,34,.45);
+      background: rgba(255,248,235,.2);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .3px;
+    }
+
+    .menu-section {
+      scroll-margin-top: 18px;
+      margin: 0 0 44px;
+    }
+
+    .menu-section h2 {
+      font-size: clamp(31px, 7vw, 42px);
+      line-height: 1;
+      letter-spacing: 1.5px;
+    }
+
+    .section-note {
+      margin: 6px auto 20px;
+      max-width: 560px;
+      color: var(--terracotta);
+      text-align: center;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 17px;
+      font-style: italic;
+    }
+
+    .section-line { margin: 12px auto 18px; }
+
+    .dish {
+      padding: 14px 2px 13px;
+      border-bottom: 1px solid rgba(154,75,52,.25);
+    }
+
+    .dish-head {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: end;
+      gap: 8px;
+    }
+
+    .dish h3 {
+      margin: 0;
+      color: var(--brown-dark);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.12;
+    }
+
+    .dots {
+      border-bottom: 2px dotted rgba(115,53,34,.42);
+      transform: translateY(-4px);
+      min-width: 18px;
+    }
+
+    .price {
+      color: var(--brown-dark);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 21px;
+      font-weight: 700;
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .dish p {
+      margin: 5px 0 0;
+      max-width: 680px;
+      color: #654a3e;
+      font-size: 12.5px;
+      line-height: 1.5;
+    }
+
+    .day-label {
+      margin: 18px 0 4px;
+      color: var(--terracotta);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .notice {
+      margin: 22px auto 0;
+      padding: 11px 14px;
+      max-width: 520px;
+      border: 1px solid rgba(154,75,52,.48);
+      color: var(--brown);
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+
+    .footer {
+      margin-top: 54px;
+      padding-top: 26px;
+      border-top: 1px solid rgba(154,75,52,.38);
+      color: var(--brown);
+      text-align: center;
+    }
+
+    .footer strong {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 20px;
+    }
+
+    .footer p {
+      margin: 4px 0;
+      font-size: 11px;
+    }
+
+    .footer a {
+      color: var(--brown);
+      font-weight: 700;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 18px 14px 34px; }
+      .topbar { margin-bottom: 19px; }
+      .brand { margin-bottom: 29px; }
+      .brand img { width: 245px; }
+      .history { margin-bottom: 42px; }
+      .story-chapter { padding: 19px 0; }
+      .story-chapter h3 { font-size: 25px; }
+      .story-chapter p { font-size: 14px; }
+      .menu-intro h2 { font-size: 38px; }
+      .quick-nav { margin-bottom: 32px; }
+      .menu-section { margin-bottom: 40px; }
+      .dish h3, .price { font-size: 19px; }
+      .dish p { font-size: 12px; }
+    }
+
+    @media (max-width: 390px) {
+      .dish-head { gap: 6px; }
+      .dish h3, .price { font-size: 18px; }
+      .quick-nav a { font-size: 10px; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Conteneur de la table avec défilement horizontal sur mobile -->
-    <div class="table-wrapper">
-        
-<h2>Let's Start with a Bit of History</h2>
+  <div class="oaxaca-border"></div>
 
-<br>
-<a href="#menu" class="btn-orange">See the Menu</a>        
+  <main class="page">
+    <nav class="topbar" aria-label="Main navigation">
+      <a href="index.html">← Home</a>
+      <a href="#menu">Go to menu ↓</a>
+    </nav>
 
-<br><br><br>
+    <header class="brand">
+      <img src="https://raw.githubusercontent.com/Duanra42/La-Abuelita-restaurante/main/Illustration_sans_titre-1%202.png"
+           alt="Comedor Típico La Abuelita">
+      <div class="brand-line"><span>◆</span></div>
+      <p>Traditional Oaxacan cuisine since 1893</p>
+    </header>
 
-<p>In the year 1893, just outside the San Juan de Dios temple, next to the entrance, Mrs. Micaela Aquino (1st Grandma) set up shop selling chocolate and enchiladas to all the people who attended the market held every Saturday in the Verde Antequera.</p><br>
+    <section class="history" aria-labelledby="historia-title">
+      <p class="eyebrow">5 generations · since 1893</p>
+      <h1 id="historia-title">Our story</h1>
+      <p class="history-subtitle">our flavor</p>
 
-<p>This is what the city of Oaxaca was called in the old days. Alongside her was her only daughter, who sold daisy-patterned pottery (made of clay), crafted in the workshop her recently deceased father, Narciso López, had left her. She had taken over the business.</p><br>
+      <article class="story-chapter">
+        <h3>1893 · Where it all began</h3>
+        <p>In 1893, Doña Micaela Aquino began selling chocolate and enchiladas in front of the San Juan de Dios church, next to the market that every Saturday brought together the people of what was then known as Verde Antequera.</p>
+        <p>By her side was her daughter, Apolonia López Aquino, who over time continued the family tradition and carried forward the flavors that would shape our cuisine: chocolate, enchiladas and Oaxaca’s traditional moles.</p>
 
-<div class="image-container">
-  <img src="https://raw.githubusercontent.com/Duanra42/La-Abuelita-restaurante/main/la%20famille%20.JPG" alt="Family Photo">  
-</div>              
+        <figure class="story-photo">
+          <img src="https://raw.githubusercontent.com/Duanra42/La-Abuelita-restaurante/main/la%20famille%20.JPG"
+               alt="Familia de Comedor Típico La Abuelita"
+               loading="lazy">
+          <figcaption>A family story that began more than a century ago.</figcaption>
+        </figure>
+      </article>
 
-<p>When Mrs. Micaela passed away, her daughter Apolonia López Aquino (2nd Grandma) took over the chocolate, enchiladas, black mole, yellow mole, green mole, and stuffed chili stand inside the Benito Juárez Maza market, continuing the tradition. This is where the food stand “La Abuelita” (The Little Grandmother) got its name.</p><br>
+      <article class="story-chapter">
+        <h3>How “La Abuelita” got its name</h3>
+        <p>When Doña Apolonia was already running her stand in Mercado Benito Juárez, journalist and historian Arcelia Yañiz, a regular Sunday customer, asked her what her business was called.</p>
+        <p>“I still haven’t given it a name,” replied Pola, as she was affectionately known. Doña Arcelia then suggested: “Why don’t you call it <em>La Abuelita</em>? You already have gray hair and grandchildren.”</p>
+        <p>And so, from a simple and affectionate conversation, the name our family still proudly carries was born.</p>
+      </article>
 
-<p>The name was suggested by Professor Arcelia Yañiz, a journalist and historian of the city, who would come every Sunday to have breakfast at the place that had been assigned to Mrs. Apolonia inside the Benito Juárez market.</p>
+      <article class="story-chapter">
+        <h3>From the market to a tradition</h3>
+        <p>Later, when Mercado 20 de Noviembre was built, the family received the spaces that became home to the comedor. Since then, generation after generation has preserved the recipes, cooking methods and warm hospitality that define La Abuelita.</p>
+        <p>Today, we continue preparing our food to order, honoring the flavors of traditional Oaxacan cuisine and sharing a part of our story with every guest.</p>
 
-<p>One day she asked, “Hey Pola” (her affectionate nickname), “what’s the name of your business?” Pola replied, “I haven’t named it yet.” To which Mrs. Arcelia said, “Why don’t you call it *La Abuelita*? After all, you already have gray hair and grandchildren!” Hahahahaha.</p><br>
+        <figure class="story-photo">
+          <img src="https://raw.githubusercontent.com/Duanra42/La-Abuelita-restaurante/main/4%20Femmes.JPG"
+               alt="Generaciones de mujeres de la familia La Abuelita"
+               loading="lazy">
+          <figcaption>A tradition passed down from generation to generation.</figcaption>
+        </figure>
+      </article>
 
-<p>And that’s how the name was born.</p><br>
+      <article class="story-chapter">
+        <h3>Five generations later…</h3>
+        <p>After more than 100 years, Comedor Típico La Abuelita continues to preserve the flavors of traditional Oaxacan cuisine. Among our most representative dishes is the <strong>“La Abuelita” Special Soup</strong>, a family recipe that has been part of our story for generations.</p>
+      </article>
 
-<div class="image-container">
-  <img src="https://raw.githubusercontent.com/Duanra42/La-Abuelita-restaurante/main/Voiture.JPG" alt="Car">  
-</div>             
+      <div class="story-closing">
+        <strong>Thank you for being part of our story.</strong>
+        <p>It is a pleasure to welcome you to our table and share the flavors our family has cared for through five generations.</p>
+        <a class="menu-button" href="#menu">Now… let’s eat! ↓</a>
+      </div>
+    </section>
 
-<p>Later, when the 20 de Noviembre Market was built, they were assigned three stalls and set up locations number 1, 2, and 3, which still remain to this day.</p><br>
+    <section class="menu-intro" id="menu">
+      <p class="eyebrow">Comedor Típico La Abuelita</p>
+      <h2>Our menu</h2>
+      <p>Traditional flavors of Oaxaca</p>
+    </section>
 
-<p>Mrs. Apolonia only gave birth to two sons, Gonzalo Victoria López and Paulino Flores López, who started out as barbers. Gonzalo, the eldest, together with his wife Mrs. Dina Rodríguez Piña (3rd Grandma), and Doña Pola gave the business more visibility. When Mrs. Pola passed away, Mr. Gonzalo and his wife inherited the business. Three years later, Mr. Chalo fell ill, and Mrs. Dina, along with all her children, tried to preserve the tradition her mother-in-law had taught her.</p><br>
+    <nav class="quick-nav" aria-label="Menu sections">
+      <a href="#desayuno">Breakfast</a>
+      <a href="#todo-dia">All day</a>
+      <a href="#especiales">Specialty dishes</a>
+      <a href="#comida">Traditional meals</a>
+      <a href="#dia">Daily specials</a>
+      <a href="#calientes">Hot drinks</a>
+      <a href="#bebidas">Drinks</a>
+      <a href="#extras">Something extra</a>
+    </nav>
 
-<p>In 2007, Mrs. Dina passed away, leaving the business to 7 of her 11 children, as 4 had already passed (Abgelina, Ricardo, Misael, and Bertin — surnamed Victoria Rodríguez).</p><br>
+    <section class="menu-section" id="desayuno">
+      <h2>Traditional breakfast</h2>
+      <p class="section-note">Start your day with Oaxacan flavor.</p>
+      <div class="section-line"><span>◆</span></div>
 
-<div class="image-container">
-  <img src="https://raw.githubusercontent.com/Duanra42/La-Abuelita-restaurante/main/Presencia.JPG" alt="Presence">  
-</div>             
+      <article class="dish"><div class="dish-head"><h3>Red or Green Enchiladas with Tasajo, Cecina, Chorizo, Chicken or Eggs (Spicy)</h3><span class="dots"></span><span class="price">$165.00</span></div><p>Lightly fried corn tortillas covered in traditional Oaxacan red or green sauce, served with your choice of meat. Finished with fresh cheese, onion and parsley.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Entomatadas with Tasajo, Cecina, Chorizo, Chicken or Eggs (Mildly spicy)</h3><span class="dots"></span><span class="price">$165.00</span></div><p>Lightly fried corn tortillas covered in traditional tomato sauce, served with your choice of meat. Finished with fresh cheese, onion and parsley.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Enmoladas with Tasajo, Cecina, Chorizo, Chicken or Eggs (Spicy)</h3><span class="dots"></span><span class="price">$185.00</span></div><p>Lightly fried corn tortillas covered in Oaxacan black mole, served with your choice of meat. Finished with fresh cheese, onion and parsley.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Pork Rind in Tomato Sauce with Beans</h3><span class="dots"></span><span class="price">$130.00</span></div><p>Pork rind cooked in traditional tomato sauce, served with pot beans.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Grilled Cheese in Tomato Sauce with Beans</h3><span class="dots"></span><span class="price">$130.00</span></div><p>Grilled fresh cheese served in traditional tomato sauce with pot beans.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Eggs in Tomato Sauce with Beans</h3><span class="dots"></span><span class="price">$130.00</span></div><p>Eggs cooked in traditional tomato sauce, served with pot beans.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Red or Green Chilaquiles with Tasajo, Cecina, Chorizo, Chicken or Egg (Spicy)</h3><span class="dots"></span><span class="price">$160.00</span></div><p>Corn tortilla chips in red or green sauce, served with crema, fresh cheese, onion and cilantro.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Enfrijoladas with Tasajo, Cecina, Chorizo, Chicken or Egg (Mildly spicy)</h3><span class="dots"></span><span class="price">$165.00</span></div><p>Lightly fried corn tortillas covered in a creamy bean sauce scented with avocado leaf and served with your choice of meat.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Oaxacan Tamal with Black Mole and Chicken</h3><span class="dots"></span><span class="price">$95.00</span></div><p>Traditional Oaxacan corn masa tamal filled with chicken and black mole, steamed in a banana leaf.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Eggs with Chorizo and Pot Beans</h3><span class="dots"></span><span class="price">$135.00</span></div><p>Scrambled eggs with Oaxacan chorizo, served with pot beans.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Eggs Your Way with Pot Beans</h3><span class="dots"></span><span class="price">$130.00</span></div><p>Eggs prepared your way, served with pot beans.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Fruit Salad with Honey and Granola</h3><span class="dots"></span><span class="price">$95.00</span></div><p>Fresh seasonal fruit served with honey and granola.</p></article>
+    </section>
 
-<p>From then on, Magdalena Virgen Victoria Rodríguez, affectionately called Mavi (4th Grandma), Fili, Gaudencio, Elías, and Dino Marco took control. To this day, together with the 5th generation — nephews Luis Ángel Victoria Pinacho, Carlos Bertín Victoria Ibáñez, and other young family members already working and organized — they run *Comedor Típico La Abuelita* to preserve the traditional culinary legacy. They strive to highlight true traditional Oaxacan food and leave a lasting tradition for future generations.</p>
+    <section class="menu-section" id="todo-dia">
+      <h2>All day</h2>
+      <p class="section-note">Our favorites to enjoy at any time of day.</p>
+      <div class="section-line"><span>◆</span></div>
 
-<div class="image-container">
-  <img src="https://raw.githubusercontent.com/Duanra42/La-Abuelita-restaurante/main/4%20Femmes.JPG" alt="Grandmas">  
-</div>             
+      <article class="dish"><div class="dish-head"><h3>Beef Tasajo with Pot Beans</h3><span class="dots"></span><span class="price">$135.00</span></div><p>Grilled beef tasajo served with pot beans topped with fresh cheese.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Marinated Pork Cecina with Pot Beans</h3><span class="dots"></span><span class="price">$135.00</span></div><p>Marinated pork cecina served with pot beans topped with fresh cheese.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Oaxacan Chorizo with Pot Beans</h3><span class="dots"></span><span class="price">$135.00</span></div><p>Grilled Oaxacan chorizo served with pot beans topped with fresh cheese.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Stuffed Oaxacan Water Pepper with Cheese or Chicken, Rice and Beans</h3><span class="dots"></span><span class="price">$140.00</span></div><p>Traditional chile de agua stuffed with cheese or seasoned chicken, coated in a light egg batter and served with rice and pot beans.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Garlic Chapulines</h3><span class="dots"></span><span class="price">$140.00</span></div><p>Traditional Oaxacan chapulines seasoned with garlic and spices, served on an avocado blossom.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Fresh Cheese Plate</h3><span class="dots"></span><span class="price">$90.00</span></div><p>Traditional locally made fresh cheese served as a side dish or appetizer.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Oaxacan Quesillo Plate</h3><span class="dots"></span><span class="price">$140.00</span></div><p>Shredded Oaxacan string cheese served on a bed of lettuce and avocado.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Mixed Tlayuda with Tasajo, Cecina and Chorizo</h3><span class="dots"></span><span class="price">$190.00</span></div><p>Traditional crispy Oaxacan tlayuda spread with asiento and bean paste, topped with quesillo, avocado, lettuce, tomato, tasajo, cecina and chorizo.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Vegetarian Tlayuda</h3><span class="dots"></span><span class="price">$190.00</span></div><p>Oaxacan tlayuda with quesillo, avocado, lettuce and tomato, served with squash blossoms and chapulines.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Tlayuda with Asiento and Your Choice of Tasajo, Cecina, Chorizo or Chicken</h3><span class="dots"></span><span class="price">$160.00</span></div><p>Traditional tlayuda with asiento, bean paste, quesillo, avocado, lettuce and tomato, with your choice of meat.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Traditional Tlayuda with Asiento</h3><span class="dots"></span><span class="price">$120.00</span></div><p>Traditional tlayuda with asiento, bean paste, quesillo, avocado, lettuce and tomato.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Oaxacan Memelitas · Fresh Cheese or Quesillo</h3><span class="dots"></span><span class="price">$95.00</span></div><p>Three corn memelitas with asiento and bean paste.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Mixed Oaxacan Memelitas with Tasajo, Cecina, Chorizo or Chicken</h3><span class="dots"></span><span class="price">$150.00</span></div><p>Three memelitas with your choice of meat.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Traditional Quesadilla</h3><span class="dots"></span><span class="price">$80.00</span></div><p>Handmade corn tortilla filled with authentic Oaxacan quesillo and cooked on the griddle until lightly golden.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Quesadilla with Tasajo, Cecina, Chorizo, Chicken, Chapulines or Squash Blossoms</h3><span class="dots"></span><span class="price">$95.00</span></div><p>Handmade corn tortilla filled with authentic Oaxacan quesillo and your choice of filling.</p></article>
+    </section>
 
-<div class="image-container">
-  <img src="https://raw.githubusercontent.com/Duanra42/La-Abuelita-restaurante/main/Abuelita%20Mavi%20.JPG" alt="Grandma Mavi">  
-</div>      
+    <section class="menu-section" id="especiales">
+      <h2>Specialty dishes</h2>
+      <p class="section-note">Made for sharing and tasting a little bit of everything.</p>
+      <div class="section-line"><span>◆</span></div>
 
-<br> 
-<p>La Abuelita, a proud tradition that endures.</p>
+      <article class="dish"><div class="dish-head"><h3>Mixed Oaxacan Platter (2 people)</h3><span class="dots"></span><span class="price">$360.00</span></div><p>A sampling of traditional Oaxacan flavors including one enmolada with black mole, one enfrijolada with bean sauce, grilled beef tasajo, marinated pork cecina and Oaxacan quesillo. Served with fresh cheese, onion and parsley.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Traditional Oaxacan Platter (2 people)</h3><span class="dots"></span><span class="price">$400.00</span></div><p>Perfect for sharing. Includes one enchilada, one enmolada, one entomatada, one enfrijolada, beef tasajo, marinated pork cecina, Oaxacan chorizo, fresh cheese, onion and parsley.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Oaxacan Tasting Platter (4 people)</h3><span class="dots"></span><span class="price">$485.00</span></div><p>Perfect for sharing. Includes chapulines, tasajo, marinated cecina, Oaxacan chorizo, chicharrón, fresh cheese, Oaxacan quesillo and your choice of chile relleno or tamal.</p></article>
+      <div class="notice">Includes handmade tortillas</div>
+    </section>
 
-<br><br><br><br><br>
+    <section class="menu-section" id="comida">
+      <h2>Traditional meals</h2>
+      <p class="section-note">Oaxacan recipes prepared to order.</p>
+      <div class="section-line"><span>◆</span></div>
 
-<h2 id="menu">Menu</h2>
+      <article class="dish"><div class="dish-head"><h3>“La Abuelita” Special Soup</h3><span class="dots"></span><span class="price">$140.00</span></div><p>Traditional chicken soup served with fresh cheese, avocado, tomato, rice, shredded chicken and topped with crispy pork cracklings.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Black Mole with Rice and Your Choice of Chicken (Leg, Thigh or Breast)</h3><span class="dots"></span><span class="price">$180.00</span></div><p>Traditional Oaxacan black mole made with dried chiles, spices and chocolate. Served with rice and your choice of chicken.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Black Mole with Rice and Chicken Wing</h3><span class="dots"></span><span class="price">$150.00</span></div><p>Traditional Oaxacan black mole made with dried chiles, spices and chocolate. Served with chicken wing and rice.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Coloradito Mole with Rice and Your Choice of Chicken (Leg, Thigh or Breast)</h3><span class="dots"></span><span class="price">$165.00</span></div><p>Traditional Oaxacan coloradito mole made with dried chiles, tomato and spices. Served with rice and your choice of chicken.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Coloradito Mole with Rice and Chicken Wing</h3><span class="dots"></span><span class="price">$140.00</span></div><p>Oaxacan red mole made with dried chiles, tomato and traditional spices. Served with chicken wing and rice.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Chicken and Vegetable Consommé</h3><span class="dots"></span><span class="price">$90.00</span></div><p>Clear broth with rice, shredded chicken, carrot, potato, chayote and green beans, seasoned with onion salt, parsley, nutmeg, pepper and clove.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Chicken Soup</h3><span class="dots"></span><span class="price">$130.00</span></div><p>Traditional chicken soup with rice, carrot, potato, chayote and green beans. Served with a piece of chicken.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Beef Soup</h3><span class="dots"></span><span class="price">$120.00</span></div><p>Traditional beef broth prepared with carrot, potato, chayote and green beans.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Side of Beans</h3><span class="dots"></span><span class="price">$50.00</span></div><p>Traditional Oaxacan-style pot beans.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Side of Rice</h3><span class="dots"></span><span class="price">$50.00</span></div><p>Traditional Mexican rice.</p></article>
+      <div class="notice">Includes handmade tortillas · All food is cooked to order</div>
+    </section>
 
-<br><br><br>
-       
-        <table> 
-            <thead>   
+    <section class="menu-section" id="dia">
+      <h2>Daily specials</h2>
+      <p class="section-note">Available during lunch hours.</p>
+      <div class="section-line"><span>◆</span></div>
 
-                <h2>Drinks</h2>
-    <table>
-        <thead>
-            <tr>
-                <th></th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="platillo-row">
-                <td>Jugo de naranja 100% natural <p class="platillo-ingles">(100% Natural Orange Juice)</p></td>
-                <td>$65.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Jugo Combinado <p class="platillo-ingles">(Combined Juice)</p></td>
-                <td>$70.00</td>
-            </tr>
-          <tr class="platillo-row">
-                <td>Agua de Horchata <p class="platillo-ingles">(Rice, Milk and Cinnamon)</p></td>
-                <td>$50.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Agua de Jamaica <p class="platillo-ingles">(Hibiscus Water)</p></td>
-                <td>$50.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Refrescos <p class="platillo-ingles">(Sodas)</p></td>
-                <td>$45.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Refrescos de Lata <p class="platillo-ingles">(Canned Sodas)</p></td>
-                <td>$50.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Botella de Agua <p class="platillo-ingles">(Water Bottle)</p></td>
-                <td>$20.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Cervezas (Corona et Victoria) <p class="platillo-ingles">(Beers: Corona and Victoria)</p></td>
-                <td>$55.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Negra Modelo <p class="platillo-ingles">(Negra Modelo Beer)</p></td>
-                <td>$65.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Michelada <p class="platillo-ingles">(Michelada)</p></td>
-                <td>$75.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Aperitivo Oaxaqueño <p class="platillo-ingles">(Oaxacan Appetizer)</p></td>
-                <td>$80.00</td>
-            </tr>
-        </tbody>
-    </table>
+      <p class="day-label">Monday, Tuesday, Wednesday, Thursday and Saturday</p>
+      <article class="dish"><div class="dish-head"><h3>Oaxacan Yellow Mole with Beef or Chicken</h3><span class="dots"></span><span class="price">$145.00</span></div><p>Traditional Oaxacan yellow mole made with our house yellow chile, served with beef and fresh vegetables such as green beans, potato and chayote.</p></article>
 
-    <br><br><br>
+      <p class="day-label">Friday</p>
+      <article class="dish"><div class="dish-head"><h3>Oaxacan Green Mole with Pork Backbone or Chicken</h3><span class="dots"></span><span class="price">$145.00</span></div><p>Traditional Oaxacan green mole made with fresh herbs and green chiles, served with pork backbone or chicken and white beans.</p></article>
 
-    <h2>Hot Drinks</h2>
-    <table>
-        <thead>
-            <tr>
-                <th></th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="platillo-row">
-                <td>Chocolate de Agua o Leche con Pan de Yema <p class="platillo-ingles">(Water or Milk Chocolate with Yema Bread)</p></td>
-                <td>$85.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Chocolate de Agua o Leche <p class="platillo-ingles">(Water or Milk Chocolate)</p></td>
-                <td>$65.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Café Negro <p class="platillo-ingles">(Black Coffee)</p></td>
-                <td>$50.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Café Negro con Pan <p class="platillo-ingles">(Black Coffee with Yema Bread)</p></td>
-                <td>$65.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Atole Blanco <p class="platillo-ingles">(Corn Porridge)</p></td>
-                <td>$50.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Atole Blanco con Pan <p class="platillo-ingles">(Corn Porridge with Bread)</p></td>
-                <td>$65.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Champurrado con Pan <p class="platillo-ingles">(Corn Dough Chocolate with Bread)</p></td>
-                <td>$85.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Chocolate con Pan y Tamal (Desayuno y Cena) <p class="platillo-ingles">(Chocolate with Bread and Tamale "corn dough, chiken, black mole sauce" - Breakfast & Dinner)</p></td>
-                <td>$150.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Café o Atole con Pan y Tamal (Desayuno) <p class="platillo-ingles">(Coffee or Atole with Bread and Tamale "corn dough, chiken, black mole sauce" - Breakfast)</p></td>
-                <td>$140.00</td>
-            </tr>
-        </tbody>
-    </table>
-    <br><br><br>
+      <p class="day-label">Sunday</p>
+      <article class="dish"><div class="dish-head"><h3>Oaxacan Almond Mole with Pork or Chicken and Rice</h3><span class="dots"></span><span class="price">$180.00</span></div><p>Traditional mole made with almonds and spices, served with pork or chicken and rice. Mildly spicy.</p></article>
+      <div class="notice">Includes handmade tortillas</div>
+    </section>
 
-    <h2>Breakfast</h2>
-    <table>
-        <thead>
-            <tr>
-                <th></th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="platillo-row">
-    <td>Salsa de Chicharrón con Frijoles <p class="platillo-francais">(Sauce de peau de porc avec des haricots)</p></td>
-    <td>$125.00</td>
-</tr>
-<tr class="platillo-row">
-    <td>Salsa de Queso con Frijoles <p class="platillo-francais">(Sauce au fromage avec des haricots)</p></td>
-    <td>$125.00</td>
-</tr>
-<tr class="platillo-row">
-    <td>Salsa de Huevo con Frijoles <p class="platillo-francais">(Sauce d'œuf avec des haricots)</p></td>
-    <td>$125.00</td>
-</tr>
-<tr class="platillo-row">
-    <td>Enchiladas o Entomatadas o Enfrijoladas con Tasajo, Cecina, Chorizo o Pollo <p class="platillo-francais">(Enchiladas ou Enchiladas à la tomate ou Enchiladas aux haricots avec Tasajo, Cecina, Chorizo ou Poulet)</p></td>
-    <td>$155.00</td>
-</tr>
-<tr class="platillo-row">
-    <td>Enmoladas con Tasajo, Cecina, Chorizo o Pollo <p class="platillo-francais">(Enmoladas "sauce mole noire" avec Tasajo, Cecina, Chorizo ou Poulet)</p></td>
-    <td>$170.00</td>
-</tr>
-<tr class="platillo-row">
-    <td>Huevos con Chorizo y Frijoles <p class="platillo-francais">(Œufs avec Chorizo et haricots)</p></td>
-    <td>$125.00</td>
-</tr>
-<tr class="platillo-row">
-    <td>Ensalada de Frutas <p class="platillo-francais">(Salade de fruits)</p></td>
-    <td>$85.00</td>
-</tr>        </tbody>
-    </table>
+    <section class="menu-section" id="calientes">
+      <h2>Hot drinks</h2>
+      <p class="section-note">Prepared to order with traditional ingredients.</p>
+      <div class="section-line"><span>◆</span></div>
 
-    <br><br><br>
+      <article class="dish"><div class="dish-head"><h3>Oaxacan Hot Chocolate (Water, Whole Milk or Lactose-Free Milk)</h3><span class="dots"></span><span class="price">$75.00</span></div><p>Traditional Oaxacan hot chocolate prepared with water, whole milk or lactose-free milk.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Black Coffee</h3><span class="dots"></span><span class="price">$55.00</span></div><p>Traditional Mexican pot coffee brewed with cinnamon and served unsweetened.</p></article>
+      <article class="dish"><div class="dish-head"><h3>White Atole</h3><span class="dots"></span><span class="price">$55.00</span></div><p>Traditional Oaxacan corn atole.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Champurrado</h3><span class="dots"></span><span class="price">$75.00</span></div><p>Traditional corn and Oaxacan chocolate drink with a rich, comforting texture.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Oaxacan Hot Chocolate with Pan de Yema</h3><span class="dots"></span><span class="price">$90.00</span></div><p>Traditional Oaxacan hot chocolate served with pan de yema.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Black Coffee with Pan de Yema</h3><span class="dots"></span><span class="price">$75.00</span></div><p>Traditional cinnamon pot coffee served hot with pan de yema.</p></article>
+      <article class="dish"><div class="dish-head"><h3>White Atole con pan de yema</h3><span class="dots"></span><span class="price">$75.00</span></div><p>Traditional corn atole served with pan de yema.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Champurrado with Pan de Yema</h3><span class="dots"></span><span class="price">$90.00</span></div><p>Traditional champurrado served with pan de yema.</p></article>
 
-    <h2>Dishes</h2>
-    <table>
-        <thead>
-            <tr>
-                <th></th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="platillo-row">
-                <td>Caldo Especial "La ABuelita" Pollo, Chicharrón, Queso, Aguacate, Tomate y Arroz <p class="platillo-ingles">(Special Soup "La Abuelita" Chiken, Cheese, Avocado,Tomato, Rice)</p></td>
-                <td>$130.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Mole Negro con Arroz y Pechuga <p class="platillo-ingles">(Black Mole Sauce with Rice and Chicken Breast )</p></td>
-                <td>$170.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Mole Negro con Arroz y Pollo (Pierna o Musclo) <p class="platillo-ingles">(Black Mole Sauce with Rice and Drumstick or Thigh )</p></td>
-                <td>$170.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Mole Negro con Arroz y Ala de Pollo <p class="platillo-ingles">(Black Mole Sauce with Rice and Chicken Wing)</p></td>
-                <td>$130.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Coloradito con Arroz y Pechuga <p class="platillo-ingles">(Red Mole Sauce with Rice and Chicken Breast)</p></td>
-                <td>$155.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Coloradito con Arroz y Pollo (Pierna o Muslo)<p class="platillo-ingles">(Red Mole Sauce with Rice and Drumstick or Thigh )</p></td>
-                <td>$155.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Coloradito con Arroz y Ala de Pollo<p class="platillo-ingles">(Red Mole Sauce with Rice and Chicken Wing)</p></td>
-                <td>$130.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Consomé con Arroz, Verduras y Pollo<p class="platillo-ingles">(Soup with Rice, Vegetables and Chicken)</p></td>
-                <td>$90.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Caldo de Pollo (Pierna o Muslo)<p class="platillo-ingles">(Chicken Soup "Drumstick or Thigh")</p></td>
-                <td>$115.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Caldo de Res<p class="platillo-ingles">(Beef Soup)</p></td>
-                <td>$100.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Orden de Arroz o Frijoles<p class="platillo-ingles">(Order of Rice or Beans)</p></td>
-                <td>$45.00</td>
-            </tr>
-        </tbody>
-    </table>
-                <br><br><br>
+      <p class="day-label">Oaxacan breakfast set</p>
+      <article class="dish"><div class="dish-head"><h3>Hot Chocolate with Bread and Tamal</h3><span class="dots"></span><span class="price">$165.00</span></div><p>Oaxacan hot chocolate served with pan de yema and an Oaxacan tamal.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Coffee or White Atole with Bread and Tamal</h3><span class="dots"></span><span class="price">$150.00</span></div><p>Traditional pot coffee or white atole served with pan de yema and tamal.</p></article>
+    </section>
 
-    <h2>All Day</h2>
-    <table>
-        <thead>
-            <tr>
-                <th></th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="platillo-row">
-                <td>Tamal Oaxaqueño de Mole Negro y Pollo <p class="platillo-ingles">(Oaxacan Tamale with Black Mole and Chicken)</p></td>
-                <td>$90.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Tasajo con Frijoles <p class="platillo-ingles">(Tasajo with Beans)</p></td>
-                <td>$125.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Cecina Enchilada de Puerco con Frijoles <p class="platillo-ingles">(Enchilada Pork Cecina with Beans)</p></td>
-                <td>$125.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Chorizo Oaxaqueño con Frijoles <p class="platillo-ingles">(Oaxacan Chorizo with Beans)</p></td>
-                <td>$125.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Tlayuda con Asiento (Sencilla) <p class="platillo-ingles">(Tlayuda with Lard - Simple Grilled Big Tortilla, Cheese, Tomato, Avocado,Lettuce, Beans Purée)</p></td>
-                <td>$110.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Tlayuda con Asiento y Tasajo, Cecina, Chorizo, Chapulines, Vegetariana o Pollo <p class="platillo-ingles">(Tlayuda with Lard and Tasajo, Cecina, Chorizo, Grasshoppers, Vegetarian or ChickenGrilled / Big Tortilla, Cheese, Tomato, Avocado,Lettuce, Beans Purée</p></td>
-                <td>$155.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Tlayuda con Asiento Mixta: Tasajo, Cecina y Chorizo <p class="platillo-ingles">(Mixed Tlayuda with Lard: Tasajo, Cecina and Chorizo / Grilled Big Tortilla, Cheese, Tomato, Avocado,Lettuce, Beans Purée</p></td>
-                <td>$180.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Chile Relleno con Arroz y Frijoles <p class="platillo-ingles">(Chili Pepper Stuffed with Rice and Beans)</p></td>
-                <td>$130.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Orden de Chapulines al Mojo de Ajo <p class="platillo-ingles">(Order of Grasshoppers with Garlic Sauce)</p></td>
-                <td>$130.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Orden de Queso <p class="platillo-ingles">(Order of Cheese)</p></td>
-                <td>$80.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Orden de Quesillo <p class="platillo-ingles">(Order of Oaxacan String Cheese)</p></td>
-                <td>$130.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Quesadilla <p class="platillo-ingles">(Quesadilla)</p></td>
-                <td>$75.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Quesadilla con Tasajo, Cecina o Chorizo <p class="platillo-ingles">(Quesadilla with Tasajo, Cecina or Chorizo)</p></td>
-                <td>$95.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td><h4>Orden de 3 Memelitas con</h4></td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Queso <p class="platillo-ingles">(Order of 3 Memelitas with Cheese)</p></td>
-                <td>$75.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Quesillo <p class="platillo-ingles">(Order of 3 Memelitas with Oaxacan String Cheese)</p></td>
-                <td>$85.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Queso y Carne <p class="platillo-ingles">(Order of 3 Memelitas with Cheese and Meat)</p></td>
-                <td>$125.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Mixta con Carne y Quesillo <p class="platillo-ingles">(Mixed Memelitas with Meat and Oaxacan String Cheese)</p></td>
-                <td>$135.00</td>
-            </tr>
-        </tbody>
-    </table>
+    <section class="menu-section" id="bebidas">
+      <h2>Drinks</h2>
+      <p class="section-note">To accompany your meal.</p>
+      <div class="section-line"><span>◆</span></div>
 
-    <br><br><br>
+      <article class="dish"><div class="dish-head"><h3>100% Fresh Orange Juice</h3><span class="dots"></span><span class="price">$70.00</span></div><p>Freshly squeezed orange juice.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Mixed Fruit Juice</h3><span class="dots"></span><span class="price">$80.00</span></div><p>Freshly prepared blend of seasonal fruits.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Traditional Horchata</h3><span class="dots"></span><span class="price">$60.00</span></div><p>Refreshing drink made with rice and cinnamon, complemented with cantaloupe and walnuts.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Hibiscus Water</h3><span class="dots"></span><span class="price">$50.00</span></div><p>Refreshing hibiscus flower infusion with a naturally tart flavor.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Jarra de Traditional Horchata</h3><span class="dots"></span><span class="price">$170.00</span></div><p>Refreshing rice-and-cinnamon horchata with cantaloupe and walnuts. Perfect for sharing.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Jarra de Hibiscus Water</h3><span class="dots"></span><span class="price">$160.00</span></div><p>Refreshing hibiscus flower infusion with a naturally tart flavor. Ideal para compartir.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Soft Drinks</h3><span class="dots"></span><span class="price">$50.00</span></div><p>Coca-Cola, Fanta, Sprite, Fresca, Sidral Mundet and sparkling water.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Soft Drinks de Lata</h3><span class="dots"></span><span class="price">$55.00</span></div><p>Coca-Cola Zero and Coca-Cola Light.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Bottled Water</h3><span class="dots"></span><span class="price">$25.00</span></div><p>Purified bottled water.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Beer · Victoria or Corona</h3><span class="dots"></span><span class="price">$60.00</span></div></article>
+      <article class="dish"><div class="dish-head"><h3>Beer · Negra Modelo, Modelo Especial or Pacífico</h3><span class="dots"></span><span class="price">$70.00</span></div></article>
+      <article class="dish"><div class="dish-head"><h3>Michelada</h3><span class="dots"></span><span class="price">$80.00</span></div><p>Mexican beer cocktail prepared with lime juice, salt and sauces.</p></article>
+      <article class="dish"><div class="dish-head"><h3>Oaxacan Aperitif</h3><span class="dots"></span><span class="price">$90.00</span></div><p>Artisanal mezcal from Oaxaca, known for its smoky flavor and traditional character.</p></article>
+    </section>
 
-    <h2>Apperitizers</h2>
-    <table>
-        <thead>
-            <tr>
-                <th></th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="platillo-row">
-                <td>Botana Oaxaqueña (2 personas): Chapulines, Tasajo, Cecina Enchilada, Chorizo, Queso, Quesillo, Chile Relleno o Tamal <p class="platillo-ingles">(Oaxacan Snack (2 people): Grasshoppers, Tasajo, Enchilada Cecina, Chorizo, Cheese, Oaxacan String Cheese, Stuffed Chile or Tamale "Corn Dough with Chicken")</p></td>
-                <td>$450.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Platillo Típico Oaxaqueño (2 personas): Enchiladas (de Coloradito), Enmolada, Entomatada, Enfrijolada, Tasajo, Cecina y Chorizo <p class="platillo-ingles">(Typical Oaxacan Dish (2 people): Enchiladas (with Coloradito), Enmolada, Entomatada, Enfrijolada, Tasajo, Cecina, and Chorizo)</p></td>
-                <td>$380.00</td>
-            </tr>
-            <tr class="platillo-row">
-                <td>Platillo Mixto Oaxaqueño (2 personas): Enmolada, Enfrijolada, Tasajo, Quesillo y Cecina Enchilada <p class="platillo-ingles">(Mixed Oaxacan Dish (2 people): Enmolada, Enfrijolada, Tasajo, Oaxacan String Cheese, and Enchilada Cecina)</p></td>
-                <td>$340.00</td>
-            </tr>
-        </tbody>
-    </table>
+    <section class="menu-section" id="extras">
+      <h2>Something extra</h2>
+      <p class="section-note">To complete your meal.</p>
+      <div class="section-line"><span>◆</span></div>
 
+      <article class="dish"><div class="dish-head"><h3>Extra Meat or Chicken</h3><span class="dots"></span><span class="price">$85.00</span></div></article>
+      <article class="dish"><div class="dish-head"><h3>Extra Eggs</h3><span class="dots"></span><span class="price">$80.00</span></div></article>
+      <article class="dish"><div class="dish-head"><h3>Single Egg</h3><span class="dots"></span><span class="price">$40.00</span></div></article>
+      <article class="dish"><div class="dish-head"><h3>Extra Mole Sauce</h3><span class="dots"></span><span class="price">$110.00</span></div></article>
+      <article class="dish"><div class="dish-head"><h3>Extra Avocado</h3><span class="dots"></span><span class="price">$60.00</span></div></article>
+      <article class="dish"><div class="dish-head"><h3>Extra Guacamole</h3><span class="dots"></span><span class="price">$50.00</span></div></article>
+      <article class="dish"><div class="dish-head"><h3>Order of Tortillas (2 pieces)</h3><span class="dots"></span><span class="price">$15.00</span></div></article>
+    </section>
+
+    <footer class="footer">
+      <strong>Comedor Típico La Abuelita</strong>
+      <p>Mercado 20 de Noviembre · Stalls 101, 102 and 103</p>
+      <p>Oaxaca de Juárez, Mexico · 68000</p>
+      <p>@la_abuelita_oax</p>
+      <p style="margin-top:14px;"><a href="#menu">Back to menu ↑</a> · <a href="index.html">Home</a></p>
+    </footer>
+  </main>
+
+  <div class="oaxaca-border"></div>
 </body>
 </html>
