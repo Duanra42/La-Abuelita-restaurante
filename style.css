@@ -1,61 +1,609 @@
-style.css
+/* =====================================================
+   COMEDOR TÍPICO LA ABUELITA
+   PAGE D'ACCUEIL
+===================================================== */
+
+
+/* ------------------------------
+   COULEURS
+------------------------------ */
+
+:root {
+
+  --cream: #ead7b8;
+
+  --cream-light: #f3e5cd;
+
+  --terracotta: #9a4b34;
+
+  --brown: #733522;
+
+  --brown-dark: #4d281c;
+
+  --text: #50382e;
+
+  --line: #ad7258;
+
+}
+
+
+/* ------------------------------
+   RESET
+------------------------------ */
+
+* {
+  box-sizing: border-box;
+}
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 0;
 
+  min-height: 100vh;
 
-.bouton-menu {
-    background-color: #e65100; /* Orange foncé, un peu plus sombre que #FF6F00 */
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(255,255,255,0.20),
+      transparent 45%
+    ),
+    var(--cream);
+
+  color: var(--text);
+
+  font-family: "Montserrat", Arial, sans-serif;
+
 }
 
 
-    
-.btn {
-    display: inline-block;
-    padding: 16px 36px;              /* Plus grand */
-    background-color: #d35400;       /* Orange foncé */
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(211, 84, 0, 0.4); /* Ombre orange */
-    font-weight: bold;
-    font-size: 20px;                 /* Texte plus grand */
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-}
-.btn:hover {
-    background-color: #a84300;       /* Orange encore plus foncé au survol */
-    box-shadow: 0 8px 16px rgba(168, 67, 0, 0.6);
-    transform: translateY(-3px);
+/* =====================================================
+   BORDURE OAXAQUEÑA
+===================================================== */
+
+.oaxaca-border {
+
+  width: 100%;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  background-color: var(--brown);
+
+  background-image:
+
+    linear-gradient(
+      45deg,
+      transparent 35%,
+      var(--cream) 35%,
+      var(--cream) 45%,
+      transparent 45%
+    ),
+
+    linear-gradient(
+      -45deg,
+      transparent 35%,
+      var(--cream) 35%,
+      var(--cream) 45%,
+      transparent 45%
+    );
+
+  background-size: 34px 30px;
+
+  border-top: 4px solid var(--terracotta);
+
+  border-bottom: 3px solid var(--terracotta);
+
 }
 
 
-img {
-  max-width: 100%;
-  height: auto;
+.oaxaca-border.bottom {
+
+  margin-top: auto;
+
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.home {
+
+  width: 100%;
+
+  max-width: 720px;
+
+  margin: 0 auto;
+
+  padding:
+
+    38px
+    24px
+    35px;
+
+  text-align: center;
+
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.restaurant-header {
+
+  width: 100%;
+
+}
+
+
+.restaurant-logo {
+
   display: block;
-  margin: 20px auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  width: 40%;
-  max-height: 400px; /* empêche qu’elle devienne trop haute */
-  object-fit: cover; /* optionnel : garde un bon cadrage */
-}    
+
+  width: min(100%, 430px);
+
+  height: auto;
+
+  margin: 0 auto;
+
+  /* Aucun cadre blanc */
+  border: none;
+
+  border-radius: 0;
+
+  box-shadow: none;
+
+}
 
 
+/* =====================================================
+   SÉPARATEUR
+===================================================== */
 
-    
+.separator {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 14px;
+
+  width: 100%;
+
+  max-width: 360px;
+
+  margin:
+
+    22px
+    auto
+    13px;
+
+  color: var(--terracotta);
+
+  font-size: 12px;
+
+}
+
+
+.separator::before,
+.separator::after {
+
+  content: "";
+
+  flex: 1;
+
+  height: 1px;
+
+  background-color: var(--line);
+
+}
+
+
+/* =====================================================
+   SOUS-TITRE
+===================================================== */
+
+.tagline {
+
+  margin: 0;
+
+  color: var(--brown);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 20px;
+
+  font-style: italic;
+
+}
+
+
+/* =====================================================
+   SECTION LANGUES
+===================================================== */
+
+.language-section {
+
+  width: 100%;
+
+  max-width: 500px;
+
+  margin:
+
+    38px
+    auto
+    0;
+
+}
+
+
+.section-title h1 {
+
+  margin: 0;
+
+  color: var(--brown);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 36px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+}
+
+
+.section-title p {
+
+  margin:
+
+    -2px
+    0
+    27px;
+
+  color: var(--terracotta);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 19px;
+
+  font-style: italic;
+
+}
+
+
+/* =====================================================
+   CHOIX LANGUE
+===================================================== */
+
+.choose-language {
+
+  margin: 0;
+
+  color: var(--brown-dark);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 22px;
+
+  font-weight: 600;
+
+}
+
+
+.choose-language-en {
+
+  margin:
+
+    2px
+    0
+    20px;
+
+  color: var(--terracotta);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 16px;
+
+  font-style: italic;
+
+}
+
+
+/* =====================================================
+   BOUTONS
+===================================================== */
+
+.languages {
+
+  display: grid;
+
+  grid-template-columns:
+
+    repeat(2, 1fr);
+
+  gap: 9px;
+
+}
+
+
+.language-button {
+
+  min-height: 62px;
+
+  padding:
+
+    10px
+    18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  color: #fff8eb;
+
+  background-color: var(--brown);
+
+  border:
+
+    1px
+    solid
+    var(--brown-dark);
+
+  text-decoration: none;
+
+  transition:
+
+    transform 0.18s ease,
+    background-color 0.18s ease,
+    box-shadow 0.18s ease;
+
+}
+
+
+.language-name {
+
+  flex: 1;
+
+  text-align: center;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 22px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+}
+
+
+.language-arrow {
+
+  font-size: 27px;
+
+  font-family: Georgia, serif;
+
+  opacity: 0.7;
+
+}
+
+
+/* Souris */
+
+.language-button:hover {
+
+  background-color: var(--terracotta);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+
+    0
+    5px
+    12px
+    rgba(77,40,28,0.20);
+
+}
+
+
+/* Clic */
+
+.language-button:active {
+
+  transform: scale(0.98);
+
+}
+
+
+/* =====================================================
+   PIED DE PAGE
+===================================================== */
+
+.restaurant-footer {
+
+  margin-top: 42px;
+
+  color: var(--brown);
+
+}
+
+
+.footer-decoration {
+
+  margin-bottom: 12px;
+
+  color: var(--terracotta);
+
+  font-size: 18px;
+
+}
+
+
+.restaurant-footer p {
+
+  margin: 4px 0;
+
+  font-size: 11px;
+
+  letter-spacing: 0.5px;
+
+}
+
+
+.restaurant-footer .footer-name {
+
+  margin-bottom: 9px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+
+}
+
+
+.instagram {
+
+  margin-top: 12px !important;
+
+  font-weight: 600;
+
+}
+
+
+/* =====================================================
+   TÉLÉPHONE
+===================================================== */
+
+@media (max-width: 600px) {
+
+
+  .oaxaca-border {
+
+    height: 23px;
+
+    background-size: 28px 23px;
+
+  }
+
+
+  .home {
+
+    padding:
+
+      28px
+      16px
+      30px;
+
+  }
+
+
+  .restaurant-logo {
+
+    width: min(100%, 330px);
+
+  }
+
+
+  .separator {
+
+    max-width: 270px;
+
+    margin-top: 17px;
+
+  }
+
+
+  .tagline {
+
+    font-size: 18px;
+
+  }
+
+
+  .language-section {
+
+    margin-top: 31px;
+
+  }
+
+
+  .section-title h1 {
+
+    font-size: 30px;
+
+    letter-spacing: 2px;
+
+  }
+
+
+  .languages {
+
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+
+  }
+
+
+  .language-button {
+
+    min-height: 57px;
+
+  }
+
+
+  .language-name {
+
+    font-size: 21px;
+
+  }
+
+
+  .restaurant-footer {
+
+    margin-top: 35px;
+
+  }
+
+}
