@@ -1,122 +1,164 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Comedor Típico La Abuelita</title>
+
   <link rel="stylesheet" href="style.css">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background-color: #FFA500; /* Orange clair */
-    }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    header 
-
-    .logo-img {
-      max-width: 100%;
-      height: auto;
-      max-width: 400px;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-      border: 5px solid white;
-      margin-bottom: 25px;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    /* Supprimer tous les styles si .no-border est ajoutée */
-    .logo-img.no-border {
-      border: none !important;
-      box-shadow: none !important;
-      border-radius: 0 !important;
-      margin-bottom: 0 !important;
-      transition: none !important;
-    }
-    .lang-buttons {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: #ffffffcc; /* Blanc semi-transparent */
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-      max-width: 400px;
-      width: 100%;
-    }
-
-    .lang-btn {
-      background-color: #cc4400; /* Orange foncé */
-      color: white;
-      padding: 12px 24px;
-      margin: 6px 0;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 16px;
-      width: 100%;
-      max-width: 300px;
-      transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s;
-    }
-
-    .lang-btn:hover {
-      background-color: #a83600; /* Plus foncé au survol */
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .lang-btn:active {
-      transform: scale(0.97);
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    }
-
-    @media (max-width: 768px) {
-      body {
-        padding: 0 10px;
-      }
-
-
-      .lang-buttons {
-        padding: 15px;
-      }
-
-      .lang-btn {
-        font-size: 14px;
-        padding: 10px 18px;
-      }
-    }
-  </style>
+  <!-- Polices -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Montserrat:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
 </head>
+
+
 <body>
-  <header>
 
-    <img src="https://raw.githubusercontent.com/Duanra42/La-Abuelita-restaurante/main/Illustration_sans_titre-1%202.png" alt="Logo du restaurant" class="logo-img no-border">
+  <!-- Bordure décorative -->
+  <div class="oaxaca-border"></div>
 
-    <br><br>
-    <!-- Boutons de sélection de langue -->
-    <div class="lang-buttons">
-      <a href="menu_es.html" class="lang-btn">Español</a>
-      <a href="menu_en.html" class="lang-btn">English</a>
-      <a href="menu_fr.html" class="lang-btn">Français</a>
-      <a href="menu_it.html" class="lang-btn">Italiano</a>
-      <a href="menu_de.html" class="lang-btn">Deutsch</a>
-      <a href="menu_ja.html" class="lang-btn">日本</a>
-      <a href="menu_ko.html" class="lang-btn">한국어</a>
-    </div>
-  </header>
+
+  <main class="home">
+
+    <!-- ==============================
+         LOGO
+    =============================== -->
+
+    <header class="restaurant-header">
+
+      <img
+        src="https://raw.githubusercontent.com/Duanra42/La-Abuelita-restaurante/main/Illustration_sans_titre-1%202.png"
+        alt="Comedor Típico La Abuelita"
+        class="restaurant-logo"
+      >
+
+      <div class="separator">
+        <span>◆</span>
+      </div>
+
+      <p class="tagline">
+        Auténtica cocina tradicional oaxaqueña
+      </p>
+
+    </header>
+
+
+    <!-- ==============================
+         CHOIX DE LA LANGUE
+    =============================== -->
+
+    <section class="language-section">
+
+      <div class="section-title">
+
+        <h1>BIENVENIDOS</h1>
+
+        <p>Welcome</p>
+
+      </div>
+
+
+      <p class="choose-language">
+        Seleccione su idioma
+      </p>
+
+      <p class="choose-language-en">
+        Select your language
+      </p>
+
+
+      <div class="languages">
+
+        <a href="menu_es.html" class="language-button">
+          <span class="language-name">Español</span>
+          <span class="language-arrow">›</span>
+        </a>
+
+
+        <a href="menu_en.html" class="language-button">
+          <span class="language-name">English</span>
+          <span class="language-arrow">›</span>
+        </a>
+
+
+        <a href="menu_fr.html" class="language-button">
+          <span class="language-name">Français</span>
+          <span class="language-arrow">›</span>
+        </a>
+
+
+        <a href="menu_it.html" class="language-button">
+          <span class="language-name">Italiano</span>
+          <span class="language-arrow">›</span>
+        </a>
+
+
+        <a href="menu_de.html" class="language-button">
+          <span class="language-name">Deutsch</span>
+          <span class="language-arrow">›</span>
+        </a>
+
+
+        <a href="menu_ja.html" class="language-button">
+          <span class="language-name">日本語</span>
+          <span class="language-arrow">›</span>
+        </a>
+
+
+        <a href="menu_ko.html" class="language-button">
+          <span class="language-name">한국어</span>
+          <span class="language-arrow">›</span>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==============================
+         INFORMATIONS
+    =============================== -->
+
+    <footer class="restaurant-footer">
+
+      <div class="footer-decoration">
+        ✦
+      </div>
+
+      <p class="footer-name">
+        COMEDOR TÍPICO LA ABUELITA
+      </p>
+
+      <p>
+        Mercado 20 de Noviembre
+      </p>
+
+      <p>
+        Locales 101, 102, 103
+      </p>
+
+      <p>
+        Oaxaca de Juárez, México
+      </p>
+
+      <p class="instagram">
+        @la_abuelita_oax
+      </p>
+
+    </footer>
+
+  </main>
+
+
+  <!-- Bordure décorative -->
+  <div class="oaxaca-border bottom"></div>
+
 </body>
 </html>
