@@ -9,24 +9,15 @@
 
   <link rel="stylesheet" href="style.css?v=3">
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5BJES2CC1K"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5BJES2CC1K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'G-5BJES2CC1K');
-
-    function trackLanguage(language) {
-      gtag('event', 'language_selected', {
-        language: language
-      });
-    }
-  </script>
+  gtag('config', 'G-5BJES2CC1K');
+</script>
 
   <!-- Polices -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
