@@ -9,6 +9,25 @@
 
   <link rel="stylesheet" href="style.css?v=3">
 
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5BJES2CC1K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-5BJES2CC1K');
+
+    function trackLanguage(language) {
+      gtag('event', 'language_selected', {
+        language: language
+      });
+    }
+  </script>
+
   <!-- Polices -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,43 +95,71 @@
 
       <div class="languages">
 
-        <a href="menu_es.html" class="language-button">
+        <a
+          href="menu_es.html"
+          class="language-button"
+          onclick="trackLanguage('Spanish')"
+        >
           <span class="language-name">Español</span>
           <span class="language-arrow">›</span>
         </a>
 
 
-        <a href="menu_en.html" class="language-button">
+        <a
+          href="menu_en.html"
+          class="language-button"
+          onclick="trackLanguage('English')"
+        >
           <span class="language-name">English</span>
           <span class="language-arrow">›</span>
         </a>
 
 
-        <a href="menu_fr.html" class="language-button">
+        <a
+          href="menu_fr.html"
+          class="language-button"
+          onclick="trackLanguage('French')"
+        >
           <span class="language-name">Français</span>
           <span class="language-arrow">›</span>
         </a>
 
 
-        <a href="menu_it.html" class="language-button">
+        <a
+          href="menu_it.html"
+          class="language-button"
+          onclick="trackLanguage('Italian')"
+        >
           <span class="language-name">Italiano</span>
           <span class="language-arrow">›</span>
         </a>
 
 
-        <a href="menu_de.html" class="language-button">
+        <a
+          href="menu_de.html"
+          class="language-button"
+          onclick="trackLanguage('German')"
+        >
           <span class="language-name">Deutsch</span>
           <span class="language-arrow">›</span>
         </a>
 
 
-        <a href="menu_ja.html" class="language-button">
+        <a
+          href="menu_ja.html"
+          class="language-button"
+          onclick="trackLanguage('Japanese')"
+        >
           <span class="language-name">日本語</span>
           <span class="language-arrow">›</span>
         </a>
 
 
-        <a href="menu_ko.html" class="language-button">
+        <a
+          href="menu_ko.html"
+          class="language-button"
+          onclick="trackLanguage('Korean')"
+        >
           <span class="language-name">한국어</span>
           <span class="language-arrow">›</span>
         </a>
